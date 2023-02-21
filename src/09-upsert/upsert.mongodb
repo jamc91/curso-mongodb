@@ -1,0 +1,23 @@
+use("platzi_store")
+
+// upsert funciona solo con updateOne agrega un elemento si no existe
+// recibe un boolean
+
+// Crea un nuevo documento si ningún documento coincide con el filtro. Para obtener más detalles, consulte el comportamiento de upsert.
+
+// Actualiza un solo documento que coincide con el filtro.
+
+// Para evitar múltiples upserts, asegúrese de que los campos de filtro estén indexados de forma única.
+
+// El valor predeterminado es falso, que no inserta un nuevo documento cuando no se encuentra ninguna coincidencia.
+
+db.iot.updateOne({
+  sensor: "A001",
+  date: "2022-01-04"
+}, {
+  $push: {
+    readings: 1243423
+  }
+}, {
+  upsert: true
+})

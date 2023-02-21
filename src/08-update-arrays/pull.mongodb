@@ -1,0 +1,20 @@
+use("platzi_store")
+
+// Remueve un elemento.
+// operador $pull
+
+// db.inventory.updateMany({}, {
+//   $pull: {
+//     tags: "book"
+//   }
+// })
+
+// remueve mas elementos en un array
+// operador $in
+db.inventory.updateMany({}, {
+  $pull: {
+    tags: {
+      $in: ["appliance", "school"]
+    }
+  }
+})
