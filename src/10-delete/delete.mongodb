@@ -1,0 +1,10 @@
+use("platzi_store")
+
+// Elimina un elemento por ID
+// db.products.deleteOne({ _id: 1 })
+
+// Elimina varios elementos con un query
+//db.products.deleteMany({ price: 100 })
+
+// Elimina toda la coleccion
+db.products.drop()
