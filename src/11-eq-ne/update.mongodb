@@ -1,0 +1,9 @@
+use("platzi_store")
+
+// $ne no equal incrementa en 10 todos los productos que no son qty 20
+
+db.inventory.updateMany({ qty: { $ne: 20 } }, {
+  $inc: {
+    qty: 10
+  }
+})
